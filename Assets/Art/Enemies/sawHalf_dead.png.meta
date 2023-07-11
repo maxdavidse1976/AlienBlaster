@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sawHalf_dead_0: 7689070360847298981
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

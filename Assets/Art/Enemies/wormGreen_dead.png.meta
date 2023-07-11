@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wormGreen_dead_0: -2919937791403488088
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

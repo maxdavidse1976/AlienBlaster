@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      slimePurple_dead_0: -7822170475870157981
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fishPink_move_0: 4844142286646948652
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ladybug_0: -179998687317359159
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

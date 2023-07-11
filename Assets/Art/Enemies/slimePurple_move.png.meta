@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      slimePurple_move_0: -1636111745598949545
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

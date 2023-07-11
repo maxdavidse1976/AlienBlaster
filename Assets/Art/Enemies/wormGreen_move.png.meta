@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wormGreen_move_0: 8915977560852894917
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
