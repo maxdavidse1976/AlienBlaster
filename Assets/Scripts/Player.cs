@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private float _horizontalVelocity = 5f;
+
     [SerializeField] private float _jumpVelocity = 5f;
     [SerializeField] private float _jumpDuration = 0.5f;
     [SerializeField] private float _jumpEndTime = 0.5f;
@@ -35,7 +37,7 @@ public class Player : MonoBehaviour
         {
             vertical = _jumpVelocity;
         }
-
+        horizontal *= _horizontalVelocity;
         rigidbody.velocity = new Vector2(horizontal, vertical);
     }
 
