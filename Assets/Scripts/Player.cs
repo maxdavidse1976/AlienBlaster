@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private float _jumpEndTime;
+    [SerializeField] private float _jumpVelocity = 5f;
+    [SerializeField] private float _jumpDuration = 0.5f;
+    [SerializeField] private float _jumpEndTime = 0.5f;
+
 
     void Start()
     {
@@ -17,11 +20,11 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            _jumpEndTime = Time.time + 0.5f;
+            _jumpEndTime = Time.time + _jumpDuration;
         }
         if (Input.GetButtonDown("Fire1") && _jumpEndTime > Time.time)
         {
-            vertical = 5;
+            vertical = _jumpVelocity;
         }
 
         rigidbody.velocity = new Vector2(horizontal, vertical);
