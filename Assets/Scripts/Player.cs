@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -16,6 +17,8 @@ public class Player : MonoBehaviour
     SpriteRenderer _spriteRenderer;
 
     public bool IsGrounded;
+    float _horizontal;
+
     void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -28,30 +31,35 @@ public class Player : MonoBehaviour
 
         var hit = Physics2D.Raycast(origin, Vector2.down, 0.1f);
         if (hit.collider)
-        {
             IsGrounded = true;
-            _spriteRenderer.sprite = _defaultSprite;
-        }
         else
-        {
             IsGrounded = false;
-            _spriteRenderer.sprite = _jumpSprite;
-        }
 
-        var horizontal = Input.GetAxis("Horizontal");
+        _horizontal = Input.GetAxis("Horizontal");
         var rigidbody = GetComponent<Rigidbody2D>();
         var vertical = rigidbody.velocity.y;
 
         if (Input.GetButtonDown("Fire1") && IsGrounded)
-        {
             _jumpEndTime = Time.time + _jumpDuration;
-        }
         if (Input.GetButtonDown("Fire1") && _jumpEndTime > Time.time)
-        {
             vertical = _jumpVelocity;
-        }
-        horizontal *= _horizontalVelocity;
-        rigidbody.velocity = new Vector2(horizontal, vertical);
+        
+        _horizontal *= _horizontalVelocity;
+        rigidbody.velocity = new Vector2(_horizontal, vertical);
+        UpdateSprite();
+    }
+
+    private void UpdateSprite()
+    {
+        if (IsGrounded)
+            _spriteRenderer.sprite = _defaultSprite;
+        else
+            _spriteRenderer.sprite = _jumpSprite;
+
+        if (_horizontal > 0)
+            _spriteRenderer.flipX = false;
+        else if (_horizontal < 0)
+            _spriteRenderer.flipX = true;
     }
 
     void OnDrawGizmos()
