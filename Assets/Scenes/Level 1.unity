@@ -578,6 +578,7 @@ MonoBehaviour:
   _jumpVelocity: 5.5
   _jumpDuration: 0.5
   _jumpEndTime: 0
+  _jumpSprite: {fileID: -3324982837959096817, guid: c002e024628a47e469c4c7ed5a37027a, type: 3}
   IsGrounded: 0
 --- !u!1 &1058381454
 GameObject:

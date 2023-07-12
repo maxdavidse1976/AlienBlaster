@@ -2,27 +2,40 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float _horizontalVelocity = 5f;
+    [Header("Movement settings")]
+    [SerializeField] float _horizontalVelocity = 5f;
 
-    [SerializeField] private float _jumpVelocity = 5f;
-    [SerializeField] private float _jumpDuration = 0.5f;
-    [SerializeField] private float _jumpEndTime = 0.5f;
+    [Header("Jump settings")]
+    [SerializeField] float _jumpVelocity = 5f;
+    [SerializeField] float _jumpDuration = 0.5f;
+    [SerializeField] float _jumpEndTime = 0.5f;
+
+    [Header("Sprites")]
+    [SerializeField] Sprite _jumpSprite;
+    Sprite _defaultSprite;
+    SpriteRenderer _spriteRenderer;
 
     public bool IsGrounded;
+    void Awake()
+    {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _defaultSprite = _spriteRenderer.sprite;    
+    }
 
     void Update()
     {
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        Vector2 origin = new Vector2(transform.position.x, transform.position.y - spriteRenderer.bounds.extents.y);
+        Vector2 origin = new Vector2(transform.position.x, transform.position.y - _spriteRenderer.bounds.extents.y);
 
         var hit = Physics2D.Raycast(origin, Vector2.down, 0.1f);
         if (hit.collider)
         {
             IsGrounded = true;
+            _spriteRenderer.sprite = _defaultSprite;
         }
         else
         {
             IsGrounded = false;
+            _spriteRenderer.sprite = _jumpSprite;
         }
 
         var horizontal = Input.GetAxis("Horizontal");
@@ -41,7 +54,7 @@ public class Player : MonoBehaviour
         rigidbody.velocity = new Vector2(horizontal, vertical);
     }
 
-    private void OnDrawGizmos()
+    void OnDrawGizmos()
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         Vector2 origin = new Vector2(transform.position.x, transform.position.y - spriteRenderer.bounds.extents.y);
