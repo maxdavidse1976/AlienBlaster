@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
 
     public bool IsGrounded;
     float _horizontal;
+    int _jumpsRemaining;
 
     void Awake()
     {
@@ -36,8 +37,11 @@ public class Player : MonoBehaviour
         var rigidbody = GetComponent<Rigidbody2D>();
         var vertical = rigidbody.velocity.y;
 
-        if (Input.GetButtonDown("Fire1") && IsGrounded)
+        if (Input.GetButtonDown("Fire1") && _jumpsRemaining > 0)
+        {
             _jumpEndTime = Time.time + _jumpDuration;
+            _jumpsRemaining--;
+        }
         if (Input.GetButtonDown("Fire1") && _jumpEndTime > Time.time)
             vertical = _jumpVelocity;
         
@@ -70,6 +74,8 @@ public class Player : MonoBehaviour
         if (hit.collider)
             IsGrounded = true;
 
+        if (IsGrounded && GetComponent<Rigidbody2D>().velocity.y  <= 0)
+            _jumpsRemaining = 2;
     }
 
     void UpdateSprite()
