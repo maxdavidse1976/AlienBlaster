@@ -17,17 +17,20 @@ public class Player : MonoBehaviour
     [SerializeField] LayerMask _layerMask;
     [SerializeField] float _footOffset = 0.5f;
 
-    SpriteRenderer _spriteRenderer;
-    Animator _animator;
 
     public bool IsGrounded;
+    
     float _horizontal;
     int _jumpsRemaining;
+    SpriteRenderer _spriteRenderer;
+    Animator _animator;
+    AudioSource _audioSource;
 
     void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -41,6 +44,7 @@ public class Player : MonoBehaviour
         {
             _jumpEndTime = Time.time + _jumpDuration;
             _jumpsRemaining--;
+            _audioSource.Play();
         }
         if (Input.GetButtonDown("Fire1") && _jumpEndTime > Time.time)
             vertical = _jumpVelocity;
