@@ -31,14 +31,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Vector2 origin = new Vector2(transform.position.x, transform.position.y - _spriteRenderer.bounds.extents.y);
-
-        var hit = Physics2D.Raycast(origin, Vector2.down, 0.1f, _layerMask);
-        if (hit.collider)
-            IsGrounded = true;
-        else
-            IsGrounded = false;
-
+        UpdateGrounding();
         _horizontal = Input.GetAxis("Horizontal");
         var rigidbody = GetComponent<Rigidbody2D>();
         var vertical = rigidbody.velocity.y;
@@ -53,7 +46,33 @@ public class Player : MonoBehaviour
         UpdateSprite();
     }
 
-    private void UpdateSprite()
+    void UpdateGrounding()
+    {
+        IsGrounded = false;
+        // Check center
+        Vector2 origin = new Vector2(transform.position.x, transform.position.y - _spriteRenderer.bounds.extents.y);
+
+        var hit = Physics2D.Raycast(origin, Vector2.down, 0.1f, _layerMask);
+        if (hit.collider)
+            IsGrounded = true;
+
+        // Check left
+        origin = new Vector2(transform.position.x - _footOffset, transform.position.y - _spriteRenderer.bounds.extents.y);
+
+        hit = Physics2D.Raycast(origin, Vector2.down, 0.1f, _layerMask);
+        if (hit.collider)
+            IsGrounded = true;
+
+        // Check right
+        origin = new Vector2(transform.position.x + _footOffset, transform.position.y - _spriteRenderer.bounds.extents.y);
+
+        hit = Physics2D.Raycast(origin, Vector2.down, 0.1f, _layerMask);
+        if (hit.collider)
+            IsGrounded = true;
+
+    }
+
+    void UpdateSprite()
     {
         _animator.SetBool("IsGrounded", IsGrounded);
         _animator.SetFloat("HorizontalSpeed", Math.Abs(_horizontal));
