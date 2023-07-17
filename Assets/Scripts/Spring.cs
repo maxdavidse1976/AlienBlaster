@@ -14,6 +14,7 @@ public class Spring : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
         _defaultSprite = _spriteRenderer.sprite;
     }
+    
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Player"))
