@@ -23,7 +23,7 @@ public class Spring : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    void OnCollisionExit2D(Collision2D collision)
     {
         _spriteRenderer.sprite = _defaultSprite;
     }
