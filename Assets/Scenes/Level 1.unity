@@ -416,6 +416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _jumpDelay: 3
   _jumpForce: {x: 200, y: 300}
+  _jumpSprite: {fileID: 7767502141250053, guid: e49bb184f4dc67041995abc782f109bd, type: 3}
 --- !u!4 &364310616 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5478712249676734801, guid: 39f6bdc21fcbeb34f9779b33691936f4, type: 3}
