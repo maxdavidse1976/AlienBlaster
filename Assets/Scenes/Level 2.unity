@@ -612,7 +612,7 @@ GameObject:
   - component: {fileID: 559136133}
   - component: {fileID: 559136132}
   m_Layer: 0
-  m_Name: flagRed
+  m_Name: flagGreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -630,7 +630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 028dacde8333b51409b7d8dadba3a8f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelName: Level 2
+  _levelName: Level 1
 --- !u!60 &559136133
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -732,7 +732,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4973259912239718972, guid: d78bb9af2ba30364aa298cc05cf21b91, type: 3}
+  m_Sprite: {fileID: -6848737422920174170, guid: 23815322289733d4ab2f31193d85ddbb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
