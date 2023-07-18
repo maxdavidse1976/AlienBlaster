@@ -4,6 +4,7 @@ public class Frog : MonoBehaviour
 {
     Rigidbody2D _rigidbody;
     SpriteRenderer _spriteRenderer;
+    AudioSource _audioSource;
 
     Sprite _defaultSprite;
     int _jumpsRemaining;
@@ -17,6 +18,7 @@ public class Frog : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _audioSource = GetComponent<AudioSource>();
         _defaultSprite = _spriteRenderer.sprite;
         _jumpsRemaining = _jumps;
         InvokeRepeating("Jump", _jumpDelay, _jumpDelay);
@@ -39,5 +41,6 @@ public class Frog : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         _spriteRenderer.sprite = _defaultSprite;
+        _audioSource.Play();
     }
 }
