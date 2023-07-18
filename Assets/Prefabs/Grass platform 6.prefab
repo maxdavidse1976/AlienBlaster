@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7945130007985319438}
   - component: {fileID: 27767416493398681}
   m_Layer: 0
-  m_Name: grassLeft_0
+  m_Name: Grass Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 3900066818138433797}
   - component: {fileID: 4595418310271879865}
   m_Layer: 0
-  m_Name: grassRight_0
+  m_Name: Grass Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -309,7 +309,7 @@ Transform:
   - {fileID: 2185252966465668438}
   - {fileID: 4307572668392645922}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3615627095062173975
 SpriteRenderer:
