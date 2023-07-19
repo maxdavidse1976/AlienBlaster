@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snow Left
       objectReference: {fileID: 0}
+    - target: {fileID: 2381925380564754207, guid: 6956ca55c8928444491a51c4b77d901b, type: 3}
+      propertyPath: m_TagString
+      value: Snow
+      objectReference: {fileID: 0}
     - target: {fileID: 2997918097783810784, guid: 6956ca55c8928444491a51c4b77d901b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -20,9 +24,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snow Right
       objectReference: {fileID: 0}
+    - target: {fileID: 4318425915816549191, guid: 6956ca55c8928444491a51c4b77d901b, type: 3}
+      propertyPath: m_TagString
+      value: Snow
+      objectReference: {fileID: 0}
     - target: {fileID: 5276968267500290998, guid: 6956ca55c8928444491a51c4b77d901b, type: 3}
       propertyPath: m_Name
       value: Snow platform 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276968267500290998, guid: 6956ca55c8928444491a51c4b77d901b, type: 3}
+      propertyPath: m_TagString
+      value: Snow
       objectReference: {fileID: 0}
     - target: {fileID: 6196582051756786363, guid: 6956ca55c8928444491a51c4b77d901b, type: 3}
       propertyPath: m_Sprite

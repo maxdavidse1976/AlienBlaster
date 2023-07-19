@@ -1506,8 +1506,8 @@ GameObject:
   - component: {fileID: 1058381455}
   - component: {fileID: 1058381457}
   m_Layer: 0
-  m_Name: Ground
-  m_TagString: Untagged
+  m_Name: Snow
+  m_TagString: Snow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1689,8 +1689,8 @@ GameObject:
   - component: {fileID: 1151011177}
   - component: {fileID: 1151011176}
   m_Layer: 0
-  m_Name: Ground (6)
-  m_TagString: Untagged
+  m_Name: Snow (1)
+  m_TagString: Snow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
