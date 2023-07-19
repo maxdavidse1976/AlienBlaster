@@ -1316,7 +1316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e67f9a35ca7ae374b893fd11008a3a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _horizontalVelocity: 3
+  _maxHorizontalSpeed: 3
   _jumpVelocity: 5.5
   _jumpDuration: 0.5
   _jumpSprite: {fileID: -3324982837959096817, guid: c002e024628a47e469c4c7ed5a37027a, type: 3}
@@ -1324,6 +1324,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 55
   _footOffset: 0.35
+  _acceleration: 10
   IsGrounded: 0
 --- !u!95 &944537883
 Animator:
