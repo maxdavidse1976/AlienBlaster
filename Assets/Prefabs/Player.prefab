@@ -413,6 +413,7 @@ MonoBehaviour:
   _footOffset: 0.35
   _groundAcceleration: 10
   _snowAcceleration: 1
+  _coinSoundEffect: {fileID: 8300000, guid: b90efef20a3251243a842988380ead04, type: 3}
   IsGrounded: 0
   IsOnSnow: 0
 --- !u!95 &2965004901090331182
