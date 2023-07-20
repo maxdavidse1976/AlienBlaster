@@ -66,7 +66,7 @@ public class Player : MonoBehaviour
         var horizontalInput = _playerInput.actions["Move"].ReadValue<Vector2>().x;
         var vertical = _rigidbody.velocity.y;
 
-        if (_playerInput.actions["Fire"].WasPerformedThisFrame() && _jumpsRemaining > 0)
+        if (_playerInput.actions["Jump"].WasPerformedThisFrame() && _jumpsRemaining > 0)
         {
             _jumpEndTime = Time.time + _jumpDuration;
             _jumpsRemaining--;
@@ -75,7 +75,7 @@ public class Player : MonoBehaviour
             _audioSource.Play();
         }
 
-        if (_playerInput.actions["Fire"].ReadValue<float>() > 0 && _jumpEndTime > Time.time)
+        if (_playerInput.actions["Jump"].ReadValue<float>() > 0 && _jumpEndTime > Time.time)
             vertical = _jumpVelocity;
 
         var desiredHorizontal = horizontalInput * _maxHorizontalSpeed;
