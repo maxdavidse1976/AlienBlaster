@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -26,7 +27,8 @@ public class Player : MonoBehaviour
     Animator _animator;
     AudioSource _audioSource;
     Rigidbody2D _rigidbody;
-    
+    PlayerInput _playerInput;
+
     float _horizontal;
     int _jumpsRemaining;
     float _jumpEndTime;
@@ -37,6 +39,7 @@ public class Player : MonoBehaviour
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
         _rigidbody = GetComponent<Rigidbody2D>();
+        _playerInput = GetComponent<PlayerInput>();
     }
 
     void OnDrawGizmos()
@@ -60,10 +63,10 @@ public class Player : MonoBehaviour
     {
         UpdateGrounding();
 
-        var horizontalInput = Input.GetAxis("Horizontal");
+        var horizontalInput = _playerInput.actions["Move"].ReadValue<Vector2>().x;
         var vertical = _rigidbody.velocity.y;
 
-        if (Input.GetButtonDown("Fire1") && _jumpsRemaining > 0)
+        if (_playerInput.actions["Fire"].WasPerformedThisFrame() && _jumpsRemaining > 0)
         {
             _jumpEndTime = Time.time + _jumpDuration;
             _jumpsRemaining--;
@@ -72,7 +75,7 @@ public class Player : MonoBehaviour
             _audioSource.Play();
         }
 
-        if (Input.GetButtonDown("Fire1") && _jumpEndTime > Time.time)
+        if (_playerInput.actions["Fire"].ReadValue<float>() > 0 && _jumpEndTime > Time.time)
             vertical = _jumpVelocity;
 
         var desiredHorizontal = horizontalInput * _maxHorizontalSpeed;
