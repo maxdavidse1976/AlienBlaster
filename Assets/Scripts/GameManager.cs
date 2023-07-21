@@ -1,4 +1,8 @@
+using NUnit.Framework;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,5 +17,27 @@ public class GameManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        GetComponent<PlayerInputManager>().onPlayerJoined += HandlePlayerJoined;
     }
+
+    void HandlePlayerJoined(PlayerInput playerInput)
+    {
+        Debug.Log($"HandlePlayerJoined {playerInput}");
+        PlayerData playerData = GetPlayerData(playerInput.playerIndex);
+
+        Player player = playerInput.GetComponent<Player>();
+        player.Bind(playerData);
+    }
+
+    PlayerData GetPlayerData(int playerIndex)
+    {
+        if (_playerDatas.Count <= playerIndex)
+        {
+            var playerData = new PlayerData();
+            _playerDatas.Add(playerData);
+        }
+        return _playerDatas[playerIndex];
+    }
+
+    List<PlayerData> _playerDatas = new List<PlayerData>();
 }
