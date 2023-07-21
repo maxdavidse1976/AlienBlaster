@@ -151,9 +151,3 @@ public class Player : MonoBehaviour
         _playerData = playerData;
     }
 }
-
-public class PlayerData
-{
-    public int Coins;
-    public int Health;
-}

@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] List<PlayerData> _playerDatas = new List<PlayerData>();
+
     public static GameManager Instance { get; private set; }
 
     void Awake()
@@ -22,7 +24,6 @@ public class GameManager : MonoBehaviour
 
     void HandlePlayerJoined(PlayerInput playerInput)
     {
-        Debug.Log($"HandlePlayerJoined {playerInput}");
         PlayerData playerData = GetPlayerData(playerInput.playerIndex);
 
         Player player = playerInput.GetComponent<Player>();
@@ -38,6 +39,4 @@ public class GameManager : MonoBehaviour
         }
         return _playerDatas[playerIndex];
     }
-
-    List<PlayerData> _playerDatas = new List<PlayerData>();
 }
