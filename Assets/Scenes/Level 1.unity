@@ -1632,6 +1632,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3846219058766440872, guid: 1ee4c27d605b383429bc414d645619e2, type: 3}
+      propertyPath: _knockbackVelocity
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 8482820198216861606, guid: 1ee4c27d605b383429bc414d645619e2, type: 3}
       propertyPath: m_RootOrder
       value: 1
