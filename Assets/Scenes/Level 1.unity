@@ -1633,6 +1633,14 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3846219058766440872, guid: 1ee4c27d605b383429bc414d645619e2, type: 3}
+      propertyPath: _hurtSoundEffect
+      value: 
+      objectReference: {fileID: 8300000, guid: 4ea253ed8a32ce940a0ceaad59d397e2, type: 3}
+    - target: {fileID: 3846219058766440872, guid: 1ee4c27d605b383429bc414d645619e2, type: 3}
+      propertyPath: _deathSoundEffect
+      value: 
+      objectReference: {fileID: 8300000, guid: 0700eec8ebf1cb2438335684c552ccd1, type: 3}
+    - target: {fileID: 3846219058766440872, guid: 1ee4c27d605b383429bc414d645619e2, type: 3}
       propertyPath: _knockbackVelocity
       value: 400
       objectReference: {fileID: 0}

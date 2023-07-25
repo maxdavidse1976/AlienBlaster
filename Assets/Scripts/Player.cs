@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
     [SerializeField] float _groundAcceleration = 10;
     [SerializeField] float _snowAcceleration = 1;
     [SerializeField] AudioClip _coinSoundEffect;
+    [SerializeField] AudioClip _hurtSoundEffect;
+    [SerializeField] AudioClip _deathSoundEffect; 
     [SerializeField] float _knockbackVelocity = 400;
 
     public bool IsGrounded;
@@ -36,6 +38,7 @@ public class Player : MonoBehaviour
     float _jumpEndTime;
 
     PlayerData _playerData = new PlayerData();
+    
 
     public int Coins { get => _playerData.Coins; private set => _playerData.Coins = value; }
 
@@ -156,8 +159,10 @@ public class Player : MonoBehaviour
     public void TakeDamage(Vector2 hitNormal)
     {
         _playerData.Health--;
-        if (_playerData.Health < 0)
+        _audioSource.PlayOneShot(_hurtSoundEffect);
+        if (_playerData.Health <= 0)
         {
+            _audioSource.PlayOneShot(_deathSoundEffect);
             SceneManager.LoadScene(0);
             return;
         }
