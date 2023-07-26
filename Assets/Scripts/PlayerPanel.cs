@@ -14,7 +14,9 @@ public class PlayerPanel : MonoBehaviour
     {
         _player = player;
         _player.CoinsChanged += UpdateCoins;
+        _player.HealthChanged += UpdateHealth;
         UpdateCoins();
+        UpdateHealth();
     }
 
     void UpdateCoins()
@@ -22,16 +24,12 @@ public class PlayerPanel : MonoBehaviour
         _scoreText.SetText(_player.Coins.ToString());
     }
 
-    void Update()
+    void UpdateHealth()
     {
-        if (_player) 
+        for (int i = 0; i < _hearts.Length; i++)
         {
-            for (int i = 0; i < _hearts.Length; i++)
-            {
-                Image heart = _hearts[i];
-                heart.enabled = i < _player.Health;
-            }
+            Image heart = _hearts[i];
+            heart.enabled = i < _player.Health;
         }
-        
     }
 }
