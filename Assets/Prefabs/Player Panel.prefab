@@ -790,3 +790,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreText: {fileID: 1542390042149841086}
+  _hearts:
+  - {fileID: 9096298268252638149}
+  - {fileID: 1767268408404903129}
+  - {fileID: 2937401084130771578}
+  - {fileID: 1158129310295223152}
+  - {fileID: 8985977658983810069}
+  - {fileID: 8978467939936354354}
