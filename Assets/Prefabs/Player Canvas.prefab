@@ -35,7 +35,7 @@ RectTransform:
   - {fileID: 5515321312737268716}
   - {fileID: 4178815939954557319}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -212,6 +212,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5529220944353403462, guid: 0d5029254d935a64eac68edeee35339f, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5529220944353403462, guid: 0d5029254d935a64eac68edeee35339f, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5529220944353403462, guid: 0d5029254d935a64eac68edeee35339f, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792410397895745975, guid: 0d5029254d935a64eac68edeee35339f, type: 3}
+      propertyPath: _flashImage
+      value: 
+      objectReference: {fileID: 5361783623782136055}
     - target: {fileID: 8824756289444961957, guid: 0d5029254d935a64eac68edeee35339f, type: 3}
       propertyPath: m_Name
       value: Player Panel 1
@@ -221,6 +237,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d5029254d935a64eac68edeee35339f, type: 3}
+--- !u!114 &5361783623782136055 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5529220944353403462, guid: 0d5029254d935a64eac68edeee35339f, type: 3}
+  m_PrefabInstance: {fileID: 491838949285681841}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &5515321312737268716 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5357321375277599069, guid: 0d5029254d935a64eac68edeee35339f, type: 3}
