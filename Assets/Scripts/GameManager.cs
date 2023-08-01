@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] List<PlayerData> _playerDatas = new List<PlayerData>();
+    [SerializeField] GameData _gameData;
 
     PlayerInputManager _playerInputManager;
 
@@ -50,16 +50,17 @@ public class GameManager : MonoBehaviour
 
     PlayerData GetPlayerData(int playerIndex)
     {
-        if (_playerDatas.Count <= playerIndex)
+        if (_gameData.PlayerDatas.Count <= playerIndex)
         {
             var playerData = new PlayerData();
-            _playerDatas.Add(playerData);
+            _gameData.PlayerDatas.Add(playerData);
         }
-        return _playerDatas[playerIndex];
+        return _gameData.PlayerDatas[playerIndex];
     }
 
     public void NewGame()
     {
-        Debug.Log("NewGame called");
+        _gameData = new GameData();
+        SceneManager.LoadScene("Level 1");
     }
 }
