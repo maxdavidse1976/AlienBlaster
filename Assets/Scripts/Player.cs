@@ -173,4 +173,9 @@ public class Player : MonoBehaviour
         _rigidbody.AddForce(-hitNormal * _knockbackVelocity);
         HealthChanged?.Invoke();
     }
+
+    public void StopJump()
+    {
+        _jumpEndTime = Time.time;
+    }
 }
